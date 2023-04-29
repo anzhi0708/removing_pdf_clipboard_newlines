@@ -1,2 +1,3 @@
 # removing_pdf_clipboard_newlines
-null
+
+Removing '\n's when copying text content from a PDF file using different languages.
