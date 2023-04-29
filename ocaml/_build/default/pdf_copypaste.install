@@ -1,0 +1,11 @@
+lib: [
+  "_build/install/default/lib/pdf_copypaste/META"
+  "_build/install/default/lib/pdf_copypaste/dune-package"
+  "_build/install/default/lib/pdf_copypaste/opam"
+]
+bin: [
+  "_build/install/default/bin/pdf_copypaste"
+]
+doc: [
+  "_build/install/default/doc/pdf_copypaste/README.md"
+]

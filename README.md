@@ -1,0 +1,2 @@
+# removing_pdf_clipboard_newlines
+null
