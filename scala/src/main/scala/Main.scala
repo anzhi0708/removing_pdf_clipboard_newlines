@@ -30,10 +30,4 @@ def removeNewLines(str: String): String =
 
 def msg = "I was compiled by Scala 3. :)"
 
-/* These were nonfunctional, incorrect approach
-def escapeQuotes(str: String): String =
-  str.replace("'", "__SINGLE_QUOTE__").replace("\"", "__DOUBLE_QUOTE__")
-def restoreQuotes(str: String): String =
-  str.replace("__SINGLE_QUOTE__", "'").replace("__DOUBLE_QUOTE__", "\"")
- */
 
