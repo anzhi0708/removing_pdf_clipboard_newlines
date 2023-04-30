@@ -7,7 +7,9 @@
 #include <thread>
 
 // Run a command and get the console output
-auto result(const std::string &cmd) {
+auto
+result(const std::string& cmd)
+{
   std::array<char, 128> buffer;
   std::string result;
   auto pipe = popen(cmd.c_str(), "r");
@@ -29,15 +31,21 @@ auto result(const std::string &cmd) {
   return result;
 }
 
-auto get_clipboard_buffer() { return result("pbpaste"); }
+auto
+get_clipboard_buffer()
+{
+  return result("pbpaste");
+}
 
-auto copy_to_clipboard(const std::string &string_to_copy) {
+auto
+copy_to_clipboard(const std::string& string_to_copy)
+{
 
   std::string escaped_string = string_to_copy;
 
   std::regex double_quote_regex("\"");
   escaped_string =
-      std::regex_replace(escaped_string, double_quote_regex, "\\\"");
+    std::regex_replace(escaped_string, double_quote_regex, "\\\"");
 
   std::regex backtick_regex("`");
   escaped_string = std::regex_replace(escaped_string, backtick_regex, "\\`");
@@ -50,13 +58,17 @@ auto copy_to_clipboard(const std::string &string_to_copy) {
   }
 }
 
-auto remove_newlines(const std::string &str) {
+auto
+remove_newlines(const std::string& str)
+{
   std::regex regex(R"(\n([a-zA-Z\"]))");
   std::string result = std::regex_replace(str, regex, " $1");
   return result;
 }
 
-int main() {
+int
+main()
+{
   std::cout << "Running..." << std::endl;
 
   while (true) {
