@@ -10,11 +10,13 @@ let refresh (frame : int ref) : string =
     List.nth animation 0
   else List.nth animation !frame
 
+(*
 let escape (s : string) (origin : string) (replacement : string) =
   (* Replace every {origin} with {replacement}. *)
   let regex = Str.regexp origin in
   let result = Str.global_replace regex replacement s in
   result
+*)
 
 let result (cmd : string) : string =
   (* Run a command and get the console output *)
@@ -45,11 +47,7 @@ let main () : unit =
     let text_without_newline =
       get_clipboard_buffer () |> remove_newlines |> String.trim
     in
-    let single_quote_escaped =
-      escape text_without_newline "'" "__SINGLE_QUOTE__"
-    in
-    let result = escape single_quote_escaped "__SINGLE_QUOTE__" "'" in
-    copy_to_clipboard result
+    copy_to_clipboard text_without_newline
   done
 
 let () = main ()
