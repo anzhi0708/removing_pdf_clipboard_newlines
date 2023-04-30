@@ -1,4 +1,0 @@
-(executable
- (public_name pdf_copypaste)
- (name main)
- (libraries pdf_copypaste unix str))

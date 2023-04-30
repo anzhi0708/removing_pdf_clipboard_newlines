@@ -1,4 +1,0 @@
-(lang dune 3.7)
-(name pdf_copypaste)
-(sections (lib .) (bin ../../bin) (doc ../../doc/pdf_copypaste))
-(files (lib (META dune-package opam)) (bin (pdf_copypaste)) (doc (README.md)))
