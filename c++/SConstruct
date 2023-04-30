@@ -1,0 +1,10 @@
+import os
+
+env = Environment(
+    ENV=os.environ,
+    CXXFLAGS=[
+        "-std=c++17"
+    ]
+)
+
+env.Program("out.exe", ["main.cpp"])
