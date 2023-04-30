@@ -2,18 +2,29 @@ import scala.sys.process._
 import scala.util.matching.Regex
 
 
+// Run a command and get the output.
 def result(cmd: List[String]): String =
   cmd.!!.trim
 
 def getClipboardBuffer: String = result("pbpaste" :: Nil)
 
+// Copy a string to clipboard.
 def copyToClipboard(toCopy: String): Int =
-  val cmd = "bash" :: "-c" :: s"echo '$toCopy' | pbcopy" :: Nil
+  val string = toCopy.replace("\"", "\\\"").replace("'", "\'")
+  val payload = s"""echo "$string" | pbcopy"""
+  val cmd = "bash" :: "-c" :: payload :: Nil
   Process(cmd).run().exitValue()
 
 def removeNewLines(str: String): String =
-  val pattern: Regex = "\\n([a-zA-Z\"])".r
+  val pattern: Regex = "\n([a-zA-Z\"])".r
   pattern.replaceAllIn(str, m => s" ${m.group(1)}")
+
+/* These were nonfunctional. Incorrect approach
+def escapeQuotes(str: String): String =
+  str.replace("'", "__SINGLE_QUOTE__").replace("\"", "__DOUBLE_QUOTE__")
+def restoreQuotes(str: String): String =
+  str.replace("__SINGLE_QUOTE__", "'").replace("__DOUBLE_QUOTE__", "\"")
+*/
 
 @main def hello: Unit =
   println("Hello world!")
