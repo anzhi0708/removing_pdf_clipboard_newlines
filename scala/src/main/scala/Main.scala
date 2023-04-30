@@ -19,8 +19,8 @@ def removeNewLines(str: String): String =
   val pattern: Regex = "\n([a-zA-Z\"])".r
   pattern.replaceAllIn(str, m => s" ${m.group(1)}")
 
-@main def hello: Unit =
-  println("Hello world!")
+@main def hello(args: String*): Unit =
+  args.foreach(println(_))
   println(msg)
   while true do {
     Thread.sleep(1000)
