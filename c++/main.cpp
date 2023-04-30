@@ -1,7 +1,6 @@
 #include <algorithm>
 #include <array>
 #include <chrono>
-#include <cstdio>
 #include <iostream>
 #include <regex>
 #include <string>
@@ -36,10 +35,6 @@ auto copy_to_clipboard(const std::string &string_to_copy) {
 
   std::string escaped_string = string_to_copy;
 
-  /*
-std::regex single_quote_regex("'");
-escaped_string = std::regex_replace(escaped_string, single_quote_regex, "\\'");
-*/
   std::regex double_quote_regex("\"");
   escaped_string =
       std::regex_replace(escaped_string, double_quote_regex, "\\\"");
