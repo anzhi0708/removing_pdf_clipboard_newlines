@@ -16,7 +16,7 @@ def copyToClipboard(toCopy: String): Int =
   Process(cmd).run().exitValue()
 
 def removeNewLines(str: String): String =
-  val pattern: Regex = "\n([a-zA-Z\"])".r
+  val pattern: Regex = raw"\n([a-zA-Z\"\(])".r
   pattern.replaceAllIn(str, m => s" ${m.group(1)}")
 
 @main def hello(args: String*): Unit =

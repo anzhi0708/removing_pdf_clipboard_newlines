@@ -1,5 +1,7 @@
 val scala3Version = "3.2.2"
 
+// fork := true
+
 lazy val root = project
   .in(file("."))
   .settings(
@@ -8,5 +10,9 @@ lazy val root = project
 
     scalaVersion := scala3Version,
 
-    libraryDependencies += "org.scalameta" %% "munit" % "0.7.29" % Test
+    libraryDependencies += "org.scalameta" %% "munit" % "0.7.29" % Test,
+	javaOptions ++= Seq(
+  		"-Xms32m",
+  		"-Xmx50m"
+	)
   )
