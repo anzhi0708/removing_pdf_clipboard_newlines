@@ -13,7 +13,7 @@ let copy_to_clipboard (string_to_copy : string) : unit =
   ()
 
 let remove_newlines (str : string) : string =
-  let regex = Str.regexp "\n\\([a-zA-Z\"]\\)" in
+  let regex = Str.regexp "\n\\([a-zA-Z\"(]\\)" in
   Str.global_replace regex " \\1" str
 
 let main () : unit =

@@ -1,2 +1,4 @@
 ocaml/_build/
 *sconsign*
+*.exe*
+*.o*
