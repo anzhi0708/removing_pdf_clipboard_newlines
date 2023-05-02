@@ -5,5 +5,6 @@ Use regular expressions to remove specific patterned text (mainly new lines), an
 
 - C++
 - Python
+- Rust
 - Scala
 - OCaml
