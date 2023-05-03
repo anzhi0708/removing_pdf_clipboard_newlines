@@ -8,8 +8,8 @@ import time
 import shlex
 
 
-PATTERN: str = r"\n([a-zA-Z\"\(])"
-REGEX = re.compile(PATTERN)
+PATTERN: str      = r"\n([a-zA-Z\"\(])"
+REGEX: re.Pattern = re.compile(PATTERN)
 
 
 def remove_new_lines(s: str) -> str:
