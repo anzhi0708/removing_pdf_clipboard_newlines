@@ -8,7 +8,7 @@ import time
 import shlex
 
 
-PATTERN: str      = r"\n([a-zA-Z\"\(])"
+PATTERN: str      = r"\n([a-zA-Z\"\(“])"
 REGEX: re.Pattern = re.compile(PATTERN)
 
 
